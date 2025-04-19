@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-image: url("assets/00.jpg");
+    color: #333;
+}
+
+.clock {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 500px;
+    color: #fff;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+
+}
+
+.number {
+    position: absolute;
+    transform: rotate(calc(30deg * var(--n))); 
+    text-align: center;
+    inset: 20px;
+    font-size: 30px;
+}
+
+.number b {
+    transform: rotate(calc(-30deg * var(--n)));
+    position: inline-block;
+    background-color: rgba(0, 0, 0, 0.425);
+    border-radius: 50%;
+    padding: 15px;
+    margin: 5px;
+    color: #fff;
+}
+
+.center-circle {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(3, 3, 3, 0.493);
+    border-radius: 50%;
+}
+
+.hour-hand,
+.minute-hand,
+.second-hand {
+    --rotate: 0;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    background-color: #1b17ff;
+    border-radius: 10px;
+    transform: translate(-50%) rotate(calc(var(--rotate) * 1deg));
+    transform-origin: bottom;
+}
+
+.hour-hand {
+    position: absolute;
+    width: 12px;
+    height: 130px;
+    background-color: #1b17ff;
+    border-radius: 10px;
+}
+
+.minute-hand {
+    position: absolute;
+    width: 12px;
+    height: 190px;
+    background-color: #544294;
+    border-radius: 10px;
+}
+
+.second-hand {
+    position: absolute;
+    width: 6px;
+    height: 210px;
+    background-color: #ff0000;
+    border-radius: 10px;
+}
